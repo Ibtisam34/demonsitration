@@ -4,7 +4,8 @@ const projects = [
   image: 'vectors/snap20.png',
   technologies: ['html', 'css', 'javascript'],
     live: '#',
-    source: '#'
+    source: '#',
+    company: 'CANOPY'
   },
   {
     name: 'Multi-Post Stories',
@@ -12,7 +13,8 @@ const projects = [
     image: 'vectors/snap4.png',
     technologies: ['html', 'css', 'javascript'],
     live: '#',
-    source: '#'
+    source: '#',
+    company: 'FACEBOOK'
   },
   {
     name: 'Facebook 360',
@@ -20,7 +22,8 @@ const projects = [
     image: 'vectors/snap.png',
     technologies: ['html', 'css', 'javascript'],
     live: '#',
-    source: '#'
+    source: '#',
+    company: 'FACEBOOK'
     },
 {
 name: 'Uber Navigation',
@@ -28,7 +31,8 @@ description: 'A smart assistant to make driving more safe, efficient, and fun by
 image: 'vectors/snap2.png',
 technologies: ['html', 'css', 'javascript'],
 live: '#',
-source: '#'
+source: '#',
+company: 'UBER'
 },
 {
 name: 'Tonic',
@@ -36,7 +40,8 @@ description: 'A daily selection of privately personalized reads; no accounts or 
 image: 'vectors/snap3.png',
 technologies: ['html', 'css', 'javascript'],
 live: '#',
-source: '#'
+source: '#',
+company: 'CANOPY'
 },
 ];
 const projectsContainer = document.querySelector('.grid-container');
@@ -84,7 +89,13 @@ cardList.appendChild(dot);
 // Create the dev
 const dev = document.createElement('li');
 dev.classList.add('dev');
-dev.textContent = 'Back End Dev';
+if (project.name === 'Tonic') {
+  dev.textContent = 'Back End Dev';
+} else if (project.name === 'Multi-Post Stories' || project.name === 'Facebook 360') {
+  dev.textContent = 'Full Stack Dev';
+} else if (project.name === 'Uber Navigation') {
+  dev.textContent = 'Lead Developer';
+}
 cardList.appendChild(dev);
 // Create the year
 const year = document.createElement('li');
